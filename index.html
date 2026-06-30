@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Mohammed Sharfas 🎂</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0f172a;
+color:white;
+overflow-x:hidden;
+}
+
+section{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:40px 20px;
+text-align:center;
+}
+
+/* Welcome */
+
+#welcome{
+background:linear-gradient(135deg,#0f172a,#1e293b);
+}
+
+.start-btn{
+margin-top:30px;
+padding:15px 30px;
+border:none;
+border-radius:30px;
+background:gold;
+font-size:18px;
+cursor:pointer;
+}
+
+/* Hero */
+
+#hero{
+background:url('images/bg.jpg') center center/cover no-repeat;
+position:relative;
+}
+
+.overlay{
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.6);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+}
+
+.hero-content h1{
+font-size:60px;
+margin-bottom:10px;
+}
+
+.hero-content p{
+font-size:22px;
+}
+
+/* Memory Cards */
+
+.memory-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    width:100%;
+    max-width:1200px;
+    margin:40px auto;
+}
+
+.card{
+    background: rgba(255,255,255,0.08);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.15);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    transition: .4s;
+    padding: 0;   /* No extra space */
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    display:block;
+    border-radius:20px;
+}
+
+.card h3{
+    padding:15px;
+    text-align:center;
+    color:white;
+}
+
+
+/* Qualities */
+
+.qualities{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+}
+
+.quality{
+padding:20px;
+background:#1e293b;
+border-radius:20px;
+width:220px;
+}
+
+/* Birthday Letter Section */
+
+#letter{
+background:linear-gradient(135deg,#0f172a,#1e293b);
+padding:100px 20px;
+}
+
+#letter h1{
+font-size:3rem;
+margin-bottom:40px;
+color:gold;
+text-shadow:0 0 15px rgba(255,215,0,.6);
+}
+
+#letter p{
+    max-width: 850px;
+    background: rgba(255,255,255,0.08);
+
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+
+    padding: 50px;
+    border-radius: 25px;
+    line-height: 2;
+    font-size: 1.15rem;
+    text-align: left;
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    box-shadow:
+        0 10px 40px rgba(0,0,0,.4),
+        0 0 25px rgba(255,215,0,.15);
+
+    position: relative;
+    overflow: hidden;
+
+    transition: all 0.4s ease;
+}
+
+/* Decorative quote */
+
+#letter p::before{
+content:"💌";
+position:absolute;
+top:15px;
+left:20px;
+font-size:2rem;
+opacity:.4;
+}
+
+#letter p::after{
+content:"✨";
+position:absolute;
+bottom:15px;
+right:20px;
+font-size:2rem;
+opacity:.4;
+}
+
+/* Hover Effect */
+
+#letter p:hover{
+transform:translateY(-5px);
+transition:.4s;
+box-shadow:
+0 15px 50px rgba(0,0,0,.5),
+0 0 35px rgba(255,215,0,.3);
+}
+
+/* Gift */
+
+.gift{
+font-size:120px;
+cursor:pointer;
+transition:.5s;
+}
+
+.gift:hover{
+transform:scale(1.1);
+}
+
+.final-message{
+display:none;
+font-size:40px;
+margin-top:20px;
+color:gold;
+}
+
+/* Confetti */
+
+.confetti{
+position:fixed;
+width:10px;
+height:10px;
+top:-10px;
+animation:fall 5s linear forwards;
+}
+
+@keyframes fall{
+to{
+transform:translateY(110vh) rotate(720deg);
+}
+}
+
+.fade{
+opacity:0;
+transform:translateY(50px);
+transition:1s;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
+
+#last-surprise{
+background:#000;
+}
+
+.wish-text{
+font-size:22px;
+margin-bottom:40px;
+}
+
+.cake-container{
+cursor:pointer;
+}
+
+.cake{
+position:relative;
+margin-top:40px;
+}
+
+.candles{
+display:flex;
+justify-content:center;
+gap:18px;
+margin-bottom:-8px;
+}
+
+.candle{
+width:12px;
+height:60px;
+background:white;
+position:relative;
+border-radius:5px;
+}
+
+.flame{
+width:18px;
+height:18px;
+background:gold;
+border-radius:50%;
+position:absolute;
+top:-18px;
+left:-3px;
+box-shadow:0 0 20px gold;
+animation:flicker .5s infinite alternate;
+}
+
+@keyframes flicker{
+from{
+transform:scale(1);
+}
+to{
+transform:scale(1.2);
+}
+}
+
+.cake-top{
+width:220px;
+height:70px;
+background:#ffb6c1;
+border-radius:20px;
+}
+
+.cake-bottom{
+width:260px;
+height:90px;
+background:#ff69b4;
+margin:auto;
+border-radius:20px;
+}
+
+#finalWish{
+display:none;
+margin-top:50px;
+max-width:700px;
+animation:fadeWish 2s;
+}
+
+@keyframes fadeWish{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.sparkle{
+position:fixed;
+font-size:25px;
+animation:spark 3s linear forwards;
+pointer-events:none;
+}
+
+@keyframes spark{
+0%{
+opacity:1;
+}
+100%{
+opacity:0;
+transform:translateY(-200px);
+}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<section id="welcome">
+<h1>A Special Birthday Surprise ❤️</h1><br><br>
+<p>For Mohammed Sharfas</p>
+
+
+
+</section>
+
+<section id="hero">
+<div class="overlay"></div>
+
+<div class="hero-content">
+<h1>Happy Birthday 🎂</h1>
+<h2>Momatheeyyyy</h2><br><br>
+<p>
+    ✨ July 1  <br><br>
+
+Today isn't just another day...<br><br>
+
+It's the birthday of someone
+who deserves all the happiness
+in the world.
+</p>
+</div>
+</section>
+
+<section id="gallery">
+
+
+
+<h1>Growing Fast 📸</h1>
+
+<div class="memory-grid">
+
+<div class="card fade">
+<img src="images/1a.png" alt="Memory 1">
+</div>
+
+<div class="card fade">
+<img src="images/2a.jpg" alt="Memory 2">
+</div>
+
+<div class="card fade">
+<img src="images/3a.png" alt="Memory 3">
+</div>
+
+<div class="card fade">
+<img src="images/4a.png" alt="Memory 4">
+</div>
+
+<div class="card fade">
+<img src="images/5a.png" alt="Memory 5">
+</div>
+
+<div class="card fade">
+<img src="images/6a.png" alt="Memory 6">
+</div>
+
+<div class="card fade">
+<img src="images/7a.png" alt="Memory 7">
+</div>
+
+<div class="card fade">
+<img src="images/8a.png" alt="Memory 8">
+</div>
+
+<div class="card fade">
+<img src="images/9a.png" alt="Memory 9">
+</div>
+
+<div class="card fade">
+<img src="images/10a.png" alt="Memory 9">
+</div>
+
+</div>
+
+</section>
+
+<section>
+<h1>Why You're Special ⭐</h1><br><br>
+
+<div class="qualities">
+
+<div class="quality">❤️ Loyal Friend</div>
+
+<div class="quality">🤝 Always Supportive</div>
+
+<div class="quality">😄 Funny & Entertaining</div>
+
+<div class="quality">🌟 Inspiring Person</div>
+
+<div class="quality">💪 Hard Working</div>
+
+<div class="quality">🎯 Goal Oriented</div>
+
+<div class="quality">😊 Kind Hearted</div>
+
+<div class="quality">🔥 Strong Mindset</div>
+
+<div class="quality">💯 Honest & Trustworthy</div>
+
+<div class="quality">✨ Positive Energy</div>
+
+<div class="quality">🎉 Brings Joy Everywhere</div>
+
+<div class="quality">🚀 Never Gives Up</div>
+
+<div class="quality">👑 One of a Kind</div>
+
+<div class="quality">❤️ The Way of You Talk</div>
+
+</div>
+
+</div>
+</section>
+
+<section id="letter">
+<h1>Birthday Letter 💌</h1>
+
+<p>
+🎂 Happy Birthday, Muhammed Sharfas! 🎂<br><br>
+
+Today is all about celebrating an amazing person, a true friend, and a brother at heart.<br>
+
+No matter how high you rise in life or how many new people you meet along the way, you will always remain one of the most valuable person I have ever had. Your kindness, confidence, and genuine heart make you someone everyone loves and respects.<br>
+
+May this new chapter of your life bring endless happiness, good health, success, and unforgettable memories. May every dream you chase turn into reality, and may every step you take lead you closer to your goals.<br>
+
+Thank you for all the laughter, support, and beautiful memories we've shared together. Life is better with a friend like you by my side.<br><br>
+
+🎉 Happy Birthday to Momatheee! 🎉<br><br>
+
+May your smile never fade, your spirit never weaken, and your journey always be filled with love, adventure, and success.<br><br>
+
+Stay blessed. Stay awesome. Keep shining. ✨❤️
+
+
+
+</p>
+</section>
+
+<section id="last-surprise">
+
+<h1>🎂 One Last Surprise</h1>
+
+<p class="wish-text">
+Close your eyes, make a wish, and click the cake...
+</p>
+
+<div class="cake-container" onclick="blowCandles()">
+
+<div class="cake">
+
+<div class="candles">
+
+<div class="candle"><div class="flame"></div></div>
+<div class="candle"><div class="flame"></div></div>
+<div class="candle"><div class="flame"></div></div>
+<div class="candle"><div class="flame"></div></div>
+<div class="candle"><div class="flame"></div></div>
+
+</div>
+
+<div class="cake-top"></div>
+<div class="cake-bottom"></div>
+
+</div>
+
+</div>
+
+<div id="finalWish">
+
+<h2>✨ Happy Birthday Momatheeyyy ✨</h2>
+
+<p>
+Some friends become memories.<br>
+Some memories become treasures.<br><br>
+
+Thank you for all the laughter,
+support and beautiful moments ❤️
+
+</p><br><br>
+
+<p class="hero-message">
+❤️ July 1 — A Day Worth Celebrating ❤️
+</h3>
+
+</div>
+
+
+
+</section>
+
+
+<script>
+
+
+
+/* Scroll Animation */
+
+const observer =
+new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+}
+
+});
+});
+
+document.querySelectorAll(".fade")
+.forEach(el=>observer.observe(el));
+
+function blowCandles(){
+
+const flames =
+document.querySelectorAll(".flame");
+
+flames.forEach((flame,index)=>{
+
+setTimeout(()=>{
+
+flame.style.opacity="0";
+
+},index*500);
+
+});
+
+setTimeout(()=>{
+
+createSparkles();
+
+},3000);
+
+setTimeout(()=>{
+
+document.getElementById("finalWish")
+.style.display="block";
+
+startConfetti();
+
+},4500);
+
+}
+
+function createSparkles(){
+
+for(let i=0;i<50;i++){
+
+let star=document.createElement("div");
+
+star.className="sparkle";
+
+star.innerHTML="✨";
+
+star.style.left=Math.random()*100+"vw";
+star.style.top=Math.random()*100+"vh";
+
+document.body.appendChild(star);
+
+setTimeout(()=>{
+star.remove();
+},3000);
+
+}
+
+}
+
+function startConfetti(){
+
+for(let i=0;i<200;i++){
+
+let confetti=document.createElement("div");
+
+confetti.classList.add("confetti");
+
+confetti.style.left=Math.random()*100+"vw";
+
+confetti.style.background=
+["red","blue","yellow","green","pink","orange","gold"]
+[Math.floor(Math.random()*7)];
+
+document.body.appendChild(confetti);
+
+setTimeout(()=>{
+confetti.remove();
+},5000);
+
+}
+
+}
+
+
+</script>
+
+</body>
+</html>
